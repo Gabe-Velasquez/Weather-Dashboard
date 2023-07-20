@@ -11,6 +11,42 @@
 </head>
 <body>
 
+    <!-- pretty boring navbar from mockup, we'll fix this later -->
+    <nav>
+        <h1 class="navbar">Weather Dashboard</h1>
+    </nav>
+
+    <!-- City Search on the left side of the document -->
+    <div class="city-search">
+        <h2 class="section-heading">Search for a City:</h2>
+        <form action="" method="get">
+            <input type="text" name="city" id="city" placeholder="Please enter a city">
+            <button type="submitBtn"></button>
+        </form>
+        <hr>
+        <div class="city-result" id="city-result"></div>
+    </div>
+
+    <!-- City Current Day Forcast -->
+    <div class="current-weather" id="current-weather">
+        <h2 id="current-city"></h2>
+        <p>Temperature: <span id="temp-current"></span></p>
+        <p>Wind: <span id="wind-current"></span></p>
+        <p>Humidity: <span id="humid-current"></span></p>
+    </div>
+
+    <!-- 5-Day Forecast Section -->
+    <div>
+    <h2>5-Day Forecast</h2>
+    <card id="Day1">
+        <h3>Date goes here</h3>
+        <img src="" alt="">
+        <p>Temperature: <span id="temp-forecast"></span></p>
+        <p>Wind: <span id="wind-forecast"></span></p>
+        <p>Humidity: <span id="humid-forecast"></span></p>
+    </card>
+    </div>
+
     <script src="./Assets/js/script.js"></script>
 </body>
 </html>
