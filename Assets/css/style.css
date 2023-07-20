@@ -6,3 +6,24 @@ body{
     margin: 0;
     min-height: 100vh;
 }
+
+.navbar{
+    text-align: center;
+    background-color: azure;
+    color: darkblue;
+    margin: 0;
+    text-decoration: wavy;
+    font-size:xx-large;
+}
+
+.wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.city-search{
+    margin-left: 3%;
+}
+

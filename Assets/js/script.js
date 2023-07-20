@@ -5,6 +5,17 @@ let citySearch = document.querySelector('#city');
 let ApiKey= "f22f30f7481bd469e766e6715325c3ad";
 let ApiURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${ApiKey}`
 
+
+let formInnerHtml = `
+
+`
+function getCardTemplate(){
+    let days='';
+    for (let i=0; i< .length; i++){
+        
+    }
+}
+
 //submit button
 // Add search history to below search button
 
