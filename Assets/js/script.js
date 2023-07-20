@@ -1,4 +1,5 @@
 let submitBtn = document.querySelector('#submitBtn');
+let citySearch = document.querySelector('#city');
 
 
 let ApiKey= "f22f30f7481bd469e766e6715325c3ad";
