@@ -32,6 +32,11 @@ body{
     align-items: center;
 }
 
+.forecast{
+    display: flex;
+    margin: 3% 8%;
+}
+
 .city-search{
     margin-left: 3%;
 }

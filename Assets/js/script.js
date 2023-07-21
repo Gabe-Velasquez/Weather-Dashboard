@@ -16,6 +16,14 @@ let formInnerHtml = `
 //     }
 // }
 
+function init(){
+    formContainerEl.formInnerHtml = formInnerHtml;
+    submitBtn = document.querySelector('#submitBtn')
+    citySearch = document.querySelector('#city')
+    formEl = document.querySelector('#form')
+    formEl.addEventListnener('submit', handleSearch)
+}
+
 //submit button
 // Add search history to below search button
 
