@@ -9,12 +9,12 @@ let ApiURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&app
 let formInnerHtml = `
 
 `
-function getCardTemplate(){
-    let days='';
-    for (let i=0; i< .length; i++){
+// function getCardTemplate(){
+//     let days='';
+//     for (let i=0; i< .length; i++){
         
-    }
-}
+//     }
+// }
 
 //submit button
 // Add search history to below search button

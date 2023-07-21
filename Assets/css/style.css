@@ -15,12 +15,21 @@ body{
     text-decoration: wavy;
     font-size:xx-large;
 }
-
+.container{
+    display:flex;
+}
 .wrapper{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+}
+
+.current-weather{
+    text-align: center;
+    background-color: aquamarine;
+    justify-content: center;
+    align-items: center;
 }
 
 .city-search{
