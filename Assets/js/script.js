@@ -1,13 +1,20 @@
-let submitBtn = document.querySelector('#submitBtn');
-let citySearch = document.querySelector('#city');
+let submitBtn = document.querySelector('#submitBtn')
+let citySearch = document.querySelector('#city')
+let forecastDates = document.getElementsByClassName('.date')
 
 
-let ApiKey= "f22f30f7481bd469e766e6715325c3ad";
+let ApiKey= "f22f30f7481bd469e766e6715325c3ad"
 let ApiURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${ApiKey}`
 
-let geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid=${ApiKey}`
-let formInnerHtml = `
+let geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit=5&appid=${ApiKey}`
 
+let formInnerHtml = `
+<card id="Day1">
+    <h3 class="date">Date goes here</h3>
+    <p>Temperature: <span id="temp-forecast"></span></p>
+    <p>Wind: <span id="wind-forecast"></span></p>
+    <p>Humidity: <span id="humid-forecast"></span></p>
+</card>
 `
 // function getCardTemplate(){
 //     let days='';
