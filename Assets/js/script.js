@@ -5,7 +5,7 @@ let citySearch = document.querySelector('#city');
 let ApiKey= "f22f30f7481bd469e766e6715325c3ad";
 let ApiURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${ApiKey}`
 
-
+let geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid=${ApiKey}`
 let formInnerHtml = `
 
 `

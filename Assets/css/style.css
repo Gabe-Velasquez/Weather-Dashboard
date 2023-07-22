@@ -19,10 +19,13 @@ body{
     display:flex;
 }
 .wrapper{
-    display: flex;
+    /* display: flex; */
+    width: 100%;
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background-color:midnightblue;
+    padding: 3%;
 }
 
 .current-weather{
@@ -30,11 +33,29 @@ body{
     background-color: aquamarine;
     justify-content: center;
     align-items: center;
+    padding: 1%;
+}
+
+h2{
+    text-align: center;
+}
+
+card{
+    padding: 1% 2%;
+    border: solid;
+    padding: 2%;
+}
+
+card h3{
+    text-align: center;
 }
 
 .forecast{
     display: flex;
-    margin: 3% 8%;
+    margin: 1% 9%;
+    align-items: center;
+    justify-content: center;
+    background-color: slategray;
 }
 
 .city-search{
