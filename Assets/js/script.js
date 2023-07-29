@@ -1,15 +1,25 @@
-let submitBtn = document.querySelector('#submitBtn')
-let citySearch = document.querySelector('#city')
-let forecastDates = document.getElementsByClassName('.date')
-
+let submitBtn = document.querySelector('#submitBtn');
+let citySearch = document.querySelector('#city');
+let forecastDates = document.getElementsByClassName('.date');
+let currentCity = document.getElementById('#current-city');
+let currentTemp = document.getElementById('#temp-current');
+let currentWind = document.getElementById('#wind-current');
+let currentHumid = document.getElementById('#humid-current');
+let forecastDate = document.getElementById('#date');
+let forecastTemp = document.getElementById('#temp-forecast');
+let forecastWind = document.getElementById('#wind-forecast');
+let forecastHumid = document.getElementById('#humid-forecast');
 
 let ApiKey= "f22f30f7481bd469e766e6715325c3ad"
 let ApiURL = `api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${ApiKey}`
 
+submitBtn.addEventListener('click', function(){
+    
+})
 let geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit=5&appid=${ApiKey}`
 
 let formInnerHtml = `
-<card id="Day1">
+<card>
     <h3 class="date">Date goes here</h3>
     <p>Temperature: <span id="temp-forecast"></span></p>
     <p>Wind: <span id="wind-forecast"></span></p>

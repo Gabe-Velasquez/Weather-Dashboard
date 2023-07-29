@@ -3,7 +3,6 @@ html{
 }
 
 body{
-    margin: 0;
     min-height: 100vh;
 }
 
@@ -11,7 +10,7 @@ body{
     text-align: center;
     background-color: azure;
     color: darkblue;
-    margin: 0;
+    margin: 2% 1%;
     text-decoration: wavy;
     font-size:xx-large;
 }
@@ -59,6 +58,14 @@ card h3{
 }
 
 .city-search{
-    margin-left: 3%;
+    margin: 3%;
+    text-align: center;
+    padding: 2%;
 }
+
+.city-search button{
+    margin: 4%;
+}
+
+
 
