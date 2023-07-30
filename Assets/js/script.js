@@ -14,12 +14,15 @@ let forecastHumid = document.querySelector('#humid-forecast');
 let city;
 let ApiKey= "f22f30f7481bd469e766e6715325c3ad";
 
+let now = dayjs();
+
 submitBtn.addEventListener('click', function(){
         let city = citySearch.value;
         currentWeather(city);
 });
 
 function currentWeather(city){
+    
         fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${ApiKey}`)
         .then(function (response){
             if (response.ok){
@@ -30,20 +33,34 @@ function currentWeather(city){
         })
         .then(function (data){
             console.log(data)
-            currentCity.textContent = data.name;
+            currentCity.textContent = data.name + ' / ' + now.format("MMMM DD, YYYY");
             currentTemp.textContent = Math.round(data.main.temp)+ '°F';
             currentWind.textContent = Math.round(data.wind.speed)+ ' mph';
             currentHumid.textContent = Math.round(data.main.humidity)+ ' %';
+            forecastWeather(city);
         })
         .catch(function(error){
             alert('Error occurred. Meow')
         });
 };
 
+function forecastWeather(city){
+    fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${ApiKey}`)
+    .then(function(response){
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data)
+    })
+    .catch(function(err){
+        alert('Ooops, something happened. Please try again later.')
+    })
+}
+
 
 // fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${ApiKey}`)
 
-// fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${ApiKey}`)
+// 
 
 let formInnerHtml = `
 <card>
