@@ -63,6 +63,10 @@ card h3{
     padding: 2%;
 }
 
+.city-previous{
+    list-style:none;
+}
+
 .city-search button{
     margin: 4%;
 }

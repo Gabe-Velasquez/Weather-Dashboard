@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width-device-width", initial-scale="1.0">
+    <meta name="viewport" content="width=device-width", initial-scale="1.0">
     <title>Weather Dashboard</title>
     <link rel="icon" type="image/png" href="https://www.google.com/s2/favicons?domain=css-tricks.com">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -20,12 +20,10 @@
         <!-- City Search on the left side of the document -->
         <div class="city-search">
             <h2 class="section-heading">Search for a City:</h2>
-            <form action="" method="get">
                 <input type="text" name="city" id="city" placeholder="Please enter a city">
-                <button type="submitBtn">Submit</button>
-            </form>
+                <button type='submit' id="submitBtn">Submit</button>
             <hr>
-            <div class="city-previous" id="city-previous"></div>
+            <ul class="city-previous" id="city-previous"></ul>
         </div>
         
         <div class="wrapper">

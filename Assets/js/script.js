@@ -1,32 +1,50 @@
 let submitBtn = document.querySelector('#submitBtn');
 let forecast = document.querySelector('.forecast');
-let forecastDates = document.getElementsByClassName('.date');
-let currentCity = document.getElementById('#current-city');
-let currentTemp = document.getElementById('#temp-current');
-let currentWind = document.getElementById('#wind-current');
-let currentHumid = document.getElementById('#humid-current');
-let forecastDate = document.getElementsByClassName('.date');
-let forecastTemp = document.getElementById('#temp-forecast');
-let forecastWind = document.getElementById('#wind-forecast');
-let forecastHumid = document.getElementById('#humid-forecast');
+let citySearch = document.querySelector('#city');
+let forecastDates = document.querySelector('.date');
+let currentCity = document.querySelector('#current-city');
+let currentTemp = document.querySelector('#temp-current');
+let currentWind = document.querySelector('#wind-current');
+let currentHumid = document.querySelector('#humid-current');
+let forecastDate = document.querySelector('.date');
+let forecastTemp = document.querySelector('#temp-forecast');
+let forecastWind = document.querySelector('#wind-forecast');
+let forecastHumid = document.querySelector('#humid-forecast');
+
+let city;
+let ApiKey= "f22f30f7481bd469e766e6715325c3ad";
 
 submitBtn.addEventListener('click', function(){
-    let ApiKey= "f22f30f7481bd469e766e6715325c3ad";
-    let citySearch = document.querySelector('#city').value;
-
-        fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${citySearch}&limit=5&appid=${ApiKey}`)
-        .then(function (response){
-            return response.json();
-        })
-        .then(function (data){
-            fetchWeather(data);
-        })
-        .catch(function(error){
-            alert('That city does not exist. Please try again.')
-        });
+        let city = citySearch.value;
+        currentWeather(city);
 });
 
-fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${ApiKey}`)
+function currentWeather(city){
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${ApiKey}`)
+        .then(function (response){
+            if (response.ok){
+            return response.json();
+            } else{
+                alert ('City does not exist');
+            }
+        })
+        .then(function (data){
+            console.log(data)
+            currentCity.textContent = data.name;
+            currentTemp.textContent = Math.round(data.main.temp)+ '°F';
+            currentWind.textContent = Math.round(data.wind.speed)+ ' mph';
+            currentHumid.textContent = Math.round(data.main.humidity)+ ' %';
+        })
+        .catch(function(error){
+            alert('Error occurred. Meow')
+        });
+};
+
+
+// fetch(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${ApiKey}`)
+
+// fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${ApiKey}`)
+
 let formInnerHtml = `
 <card>
     <h3 class="date">Date goes here</h3>
